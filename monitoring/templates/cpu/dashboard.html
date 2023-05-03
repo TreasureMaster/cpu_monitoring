@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %}{% endblock title %}
+
+{% block content %}
+<div class="card" id="pie-charts">
+    <div class="card-block">
+        <h2>Overall analysis</h2>
+        <div class="round-chart" data-percent="42">
+            <span>
+                42
+                <small>
+                    % <br>
+                    recurring
+                </small>
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}

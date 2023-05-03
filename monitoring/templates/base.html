@@ -29,9 +29,9 @@
 
       <div id="main" class="col-sm-9">
         <!-- Дополнительный div для выравнивания flex-элементов .card при растягивании левого меню #side-menu -->
-        <div id="main-block">
+        <!-- <div id="main-block"> -->
 
-          <div class="row w-100">
+          <!-- <div class="row w-100"> -->
           {% block content %}
           {% comment %}
             {% if cards|length > 1 %}
@@ -43,9 +43,9 @@
             {% endif %}
           {% endcomment %}
             {% endblock content %}
-          </div>
+          <!-- </div> -->
 
-        </div> <!-- end of .main-block -->
+        <!-- </div> end of .main-block -->
         </div> <!-- end of #main -->
     </div> <!-- end of .row основного раздела-->
   </div> <!-- end of .container-fluid основного раздела -->
@@ -53,7 +53,7 @@
 <!-- ------------------------------- Скрипты ------------------------------- -->
 
 
-<script src="{% static 'site/js/auction.js' %}"></script>
+<script src="{% static 'site/js/monitoring.js' %}"></script>
 {% block js %}{% endblock %}
 </body>
 </html>

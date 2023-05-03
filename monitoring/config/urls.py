@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('apps.core.urls', namespace='core'),),
+    path('cpu/', include('apps.cpu.urls', namespace='cpu'),),
     path('', lambda request: redirect('core:main')),
 ]
