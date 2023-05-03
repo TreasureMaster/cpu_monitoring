@@ -1,0 +1,392 @@
+.transition,
+.transition:hover,
+.transition:focus {
+  transition: all 150ms ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  background-color: #e5e9ec;
+  margin: 0;
+}
+/* Значение height для html заставляло прокручиваться nav в окне */
+/* body {
+  height: 100vh;
+} */
+#for-testing p {
+  font-size: 2em;
+}
+/* Навигационная панель */
+nav.navbar {
+  /* background-color: #fff; */
+  /* border: none; */
+  padding: 0;
+}
+nav.navbar a.navbar-brand {
+  padding-top: 0;
+}
+nav .top-left-menu {
+  background-color: #252830;
+  padding: 0.9em;
+}
+.navbar-brand {
+  height: auto;
+}
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #fff;
+}
+nav .header-refresh {
+  color: #fff;
+  font-size: 1.25rem;
+  padding: .3125rem 0;
+  /* outline: none; */
+  /* text-decoration: none; */
+}
+nav a.header-refresh:hover {
+  color: #c9c9c9;
+  /* outline: none;
+  text-decoration: none; */
+}
+nav a.header-refresh:focus {
+  /* outline: none; */
+  /* text-decoration: none; */
+  box-shadow: none;
+}
+/* Стили кнопки меню для мобильных */
+.navbar-toggler {
+  border-color: #252830;
+  background-color: #e5e9ec;
+  /* margin-top: 13px; */
+}
+/* .navbar-toggler .navbar-toggler-icon {
+  background-color: #252830;
+} */
+/* Стили формы поиска */
+#search {
+  padding: 0.9em;
+}
+/* #search .input-group {
+  align-items: center;
+} */
+#search .input-group .form-control {
+  background-color: #f3f3f3;
+}
+#search .input-group {
+  width: 60%;
+}
+/* Псевдокласс :focus-within меняет стиль родительского элемента, если внутри него какой-либо элемент получает фокус */
+#search .input-group:focus-within {
+  width: 100%;
+}
+
+/* Стили меню Notifications */
+#nav-menu {
+  padding-left: 0.4em;
+  padding-right: 1em;
+}
+#btn-notifications > .badge {
+  /* color: #fff;
+  background-color: #f35958; */
+  font-size: 0.7em;
+  align-self: flex-start;
+  padding: 0.3rem 0.45rem 0.35rem 0.45rem;
+}
+#btn-notifications .btn-link {
+  /* padding: 1.5em; */
+  padding-right: 0;
+  color: #252830;
+  font-weight: 500;
+}
+#btn-notifications .btn-link:hover,
+/* #btn-notifications .btn-link:active, */
+/* #btn-notifications .btn-link:visited, */
+#btn-notifications .btn-link:link,
+#btn-notifications .btn-link:focus {
+  text-decoration: none;
+}
+/* Удаление стрелки выпадающего списка */
+.caret-off:after,
+.caret-off:before {
+  display: none;
+}
+/* Сам выпадающий список */
+#notification-list {
+  max-height: 20em;
+  overflow: auto;
+}
+#notification-list a {
+  display: flex;
+  opacity: 0.7;
+  margin: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.3rem;
+  background-color: #e9e9e9;
+  position: relative;
+  color: #252830;
+}
+#notification-list a:hover {
+  color: #262626;
+  text-decoration: none;
+  opacity: 1;
+}
+#notification-list img {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin-right: 1.2em;
+  margin-top: 1em;
+}
+#notification-list .notification-message {
+  display: inline-block;
+  white-space: normal;
+  min-width: 25rem;
+}
+#notification-list .badge:empty {
+  display: inline-block;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  height: 0.95rem;
+}
+#notification-list em.since {
+  font-size: 0.7em;
+  color: #646c82;
+}
+/* Стили настроек профиля */
+#nav-profile,
+#nav-language {
+  margin: 0;
+  margin-left: 0.7em;
+}
+#nav-profile button.dropdown-toggle,
+#nav-language button.dropdown-toggle {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#nav-profile button.dropdown-toggle,
+#nav-language button.dropdown-toggle {
+  box-shadow: none;
+}
+#nav-profile img,
+#nav-language img {
+  max-height: 2.8em;
+}
+#nav-profile ul a,
+#nav-language ul a {
+  padding: 0.5rem 1.3rem;
+  color: #252830;
+  opacity: 0.7;
+}
+
+#nav-profile a:hover,
+#nav-language a:hover {
+  color: #252830;
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* Общий контейнер */
+
+/* Боковое меню */
+#side-menu {
+  min-height: 100vh;
+  background-color: #1b1e24;
+  /* padding-top: 1rem; */
+}
+#side-menu .leftside-block {
+  padding-top: 0.8rem;
+  position: sticky;
+  top: 71px;
+}
+#side-menu .profile-block > * {
+  display: inline-block;
+}
+#side-menu .profile-block img {
+  width: 70px;
+}
+#side-menu .profile-title {
+  color: #fff;
+  margin-left: 0.2rem;
+  font-size: 1em;
+  vertical-align: middle;
+}
+#side-menu .profile-title small {
+  display: block;
+}
+#side-menu ul.nav {
+  margin-top: 1rem;
+}
+#side-menu ul.nav a {
+  color: #8b91a0;
+}
+#side-menu ul.nav a:hover,
+#side-menu ul.nav a:focus {
+  color: #fff;
+  background-color: inherit;
+}
+/* #side-menu ul.nav a .fa {
+  margin-right: 0.7rem;
+} */
+#side-menu ul.nav a .fa.pull-right {
+  margin-top: 0.35rem;
+  /* will-change: transform; */
+}
+/* #side-menu ul.nav li.dropdown-divider {
+  background-color: #252830;
+} */
+#side-menu ul.nav ul {
+  margin-left: 18%;
+}
+#side-menu ul.nav ul a {
+  display: block;
+  background-color: #2b303b;
+  padding: 0.2rem;
+  margin-bottom: 0.3rem;
+  border-radius: 0.25em;
+}
+#side-menu ul.nav ul a:hover {
+  text-decoration: none;
+  background-color: #434857;
+}
+/* Поворачивающиеся стрелки (обратно не поворачиваются) */
+/* #side-menu ul.nav a:focus .fa-chevron-left.pull-right {
+  transform: rotate(-90deg);
+} */
+
+/* Основной контент */
+
+#main-block {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* align-items: flex-start; */
+}
+/* Стили карточек */
+.card {
+  position: relative;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  background-color: #fff;
+  /* margin: 1.25rem; */
+  margin: 1rem 0;
+  /* max-width: 22%; */
+  /* flex-grow: 5; */
+}
+/* .card * {
+  color: #252830;
+} */
+.card-block {
+  padding: 2rem;
+}
+.card-block h2 {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  color: #252830;
+}
+.card .btn-success,
+.card .btn-primary {
+  color: #fff;
+}
+
+/* Стили круговых диаграмм Easy Pie Chart */
+.round-chart {
+  display: inline-block;
+  position: relative;
+}
+.round-chart + .round-chart {
+  float: right;
+}
+.round-chart span {
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.7rem;
+  width: 12rem;
+  height: 4.4rem;
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.round-chart span > small {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+/* Стили краткой карточки статистики */
+#quick-info .card-block {
+  display: flex;
+  flex-direction: column;
+}
+#quick-info .quick-stats {
+  font-size: 1rem;
+  line-height: 2rem;
+  border-bottom: 0.1rem solid #e5e9ec;
+}
+#quick-info .quick-stats strong {
+  font-weight: 400;
+}
+#quick-info .quick-stats span {
+  font-weight: 300;
+  float: right;
+  color: #8b91a0;
+}
+
+/* Блок скрытия загрузки страницы */
+.loading {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/loading.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #e5e9ec;
+}
+
+/* Возврат отображения красным для error messages в форме, скрытый .card */
+span.invalid-feedback > strong {
+/* #error_1_id_username { */
+  color: #dc3545;
+}
+
+/* Удаление рамки при нажатии checkbox */
+.remove-checkbox-border:focus {
+  box-shadow: none;
+}
+
+.w-20 {
+  width: 20% !important;
+}
+.w-10 {
+  width: 10% !important;
+}
+.w-35 {
+  width: 35% !important;
+}
+
+/* Для формы фильтрации в левом меню */
+#side-menu ul.nav form {
+  color: #8b91a0;
+}
+
+#side-menu ul.nav form select {
+  color: #8b91a0;
+  background-color: #2b303b;
+}
+
+#side-menu ul.nav form select:hover {
+  background-color: #434857;
+}

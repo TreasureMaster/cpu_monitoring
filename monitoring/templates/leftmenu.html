@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load static %}
+<div id="side-menu" class="col-sm-3 d-none d-sm-block">
+    <div class="leftside-block">
+      <div class="profile-block">
+        <img src="{% static 'site/images/no-user-image.gif' %}" alt="no image" class="rounded-circle">
+        <h4 class="profile-title">{% trans "Anonymous User" %}</h4>
+      </div>
+
+      <ul class="nav nav-pills flex-column">
+
+        <li class="nav-item">
+          <a href="#" class="nav-link transition">
+            <span class="fa fa-home fa-fw" aria-hidden="true"></span>
+            {% trans "Overview" %}
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>

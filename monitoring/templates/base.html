@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% trans "CPU Monitoring" %}{% endblock %}</title>
+
+  {% include 'includes/bootstrap_css.html' %}
+  <link rel="stylesheet" href="{% static 'site/css/base.css' %}">
+</head>
+<body>
+  <div class="loading"></div>
+
+  <!-- Навигационная панель -->
+  {% include 'navbar.html' %}
+  {# Нужно загружать скрипты в начале из-за datepicker #}
+  {% include 'includes/bootstrap_scripts.html' %}
+
+  <!-- ---------------------------- Нижняя часть ----------------------------- -->
+  <!-- Основной раздел -->
+
+  <div class="container-fluid">
+    <div class="row">
+
+      {% include 'leftmenu.html' %}
+
+      <div id="main" class="col-sm-9">
+        <!-- Дополнительный div для выравнивания flex-элементов .card при растягивании левого меню #side-menu -->
+        <div id="main-block">
+
+          <div class="row w-100">
+          {% block content %}
+          {% comment %}
+            {% if cards|length > 1 %}
+              {% for card in cards %}
+                {% include 'cards/many_cards.html' %}
+              {% endfor %}
+            {% else %}
+              {% include 'cards/one_card.html' %}
+            {% endif %}
+          {% endcomment %}
+            {% endblock content %}
+          </div>
+
+        </div> <!-- end of .main-block -->
+        </div> <!-- end of #main -->
+    </div> <!-- end of .row основного раздела-->
+  </div> <!-- end of .container-fluid основного раздела -->
+
+<!-- ------------------------------- Скрипты ------------------------------- -->
+
+
+<script src="{% static 'site/js/auction.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

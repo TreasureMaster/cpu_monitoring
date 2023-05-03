@@ -1,0 +1,50 @@
+{% load i18n %}
+{% load static %}
+<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
+    <div class="col-sm-3 top-left-menu d-flex">
+
+        <a href="#" class="navbar-brand"><h1>{% trans "Monitoring Dashboard" %}</h1></a>
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+
+    <div id="nav-menu" class="collapse navbar-collapse justify-content-end">
+
+      <!-- Круглая кнопка профиля -->
+      <div id="nav-profile" class="btn-group">
+        <button type="button" class="btn btn-link dropdown-toggle caret-off"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'site/images/no-user-image.gif' %}" alt="{% trans 'no image' %}" class="img-thumbnail rounded-circle">
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-right">
+          {% if user.is_authenticated %}
+          <li>
+            <a href="#" class="transition">{% trans "Profile" %}</a>
+          </li>
+          <li>
+            <a href="#" class="transition">{% trans "Settings" %}</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="#" class="transition">{% trans "Sign in" %}</a>
+          </li>
+          {% endif %}
+          <li class="dropdown-divider"></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="#" class="transition">{% trans "Logout" %}</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="#" class="transition">{% trans "Sign up" %}</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+</nav>
