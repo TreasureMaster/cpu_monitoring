@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # сторонние
     'django_apscheduler',
-    'charts_dashboard',
+    # 'charts_dashboard',
     # локальные
     'apps.core',
     'apps.cpu',

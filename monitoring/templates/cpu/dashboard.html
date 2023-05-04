@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load i18n %}
-{% load charts %}
 
 {% block title %}{% trans "Dashboard" %}{% endblock title %}
 
@@ -26,12 +25,10 @@
         <h2>Краткая статистика</h2>
         <div class="quick-stats">
             <strong>Начало периода:</strong>
-            {#<span>{{ object_list.first.created_at }}</span>#}
             <span>{{ starts_at }}</span>
         </div>
         <div class="quick-stats">
             <strong>Конец периода:</strong>
-            {#<span>{{ object_list.last.created_at }}</span>#}
             <span>{{ ends_at }}</span>
         </div>
         <div class="quick-stats">
@@ -47,20 +44,12 @@
 
 <div id="ration-stock" class="card col-sm-12">
     <div class="card-block">
-        <h2>Ration stock info</h2>
-        {% render_chart chart %}
-        <!-- <canvas id="barchart"></canvas> -->
-        <!-- <div class="stacked-area"></div>
-        <div class="switch">
-            View main stocks
-            <input type="checkbox" class="switchery" checked>
-            <div class="clearfix"></div>
-        </div>
-        <div class="switch">
-            Hide empty stocks
-            <input type="checkbox" class="switchery">
-            <div class="clearfix"></div> -->
-        </div>
+        <h2>5-секундные отметки времени</h2>
+        <canvas id="chart1"></canvas>
+    </div>
+    <div class="card-block">
+        <h2>Усредненные 1-минутные значения</h2>
+        <canvas id="chart2"></canvas>
     </div>
 </div>
 {% endblock %}
