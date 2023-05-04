@@ -7,15 +7,57 @@
 {% block content %}
 <div class="card" id="pie-charts">
     <div class="card-block">
-        <h2>Overall analysis</h2>
-        <div class="round-chart" data-percent="42">
+        <h2>Общий анализ</h2>
+        <div class="round-chart" data-percent="{{ loads }}">
             <span>
-                42
+                {{ loads }}
                 <small>
                     % <br>
-                    recurring
+                    работал
                 </small>
             </span>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="quick-info">
+    <div class="card-block">
+        <h2>Краткая статистика</h2>
+        <div class="quick-stats">
+            <strong>Начало периода:</strong>
+            {#<span>{{ object_list.first.created_at }}</span>#}
+            <span>{{ starts_at }}</span>
+        </div>
+        <div class="quick-stats">
+            <strong>Конец периода:</strong>
+            {#<span>{{ object_list.last.created_at }}</span>#}
+            <span>{{ ends_at }}</span>
+        </div>
+        <div class="quick-stats">
+            <strong>CPU работал:</strong>
+            <span>{{ loads }} %</span>
+        </div>
+        <div class="quick-stats">
+            <strong>CPU простаивал:</strong>
+            <span>{{ idle }} %</span>
+        </div>
+    </div>
+</div>
+
+<div id="ration-stock" class="card col-sm-12">
+    <div class="card-block">
+        <h2>Ration stock info</h2>
+        <canvas id="grafica"></canvas>
+        <!-- <div class="stacked-area"></div>
+        <div class="switch">
+            View main stocks
+            <input type="checkbox" class="switchery" checked>
+            <div class="clearfix"></div>
+        </div>
+        <div class="switch">
+            Hide empty stocks
+            <input type="checkbox" class="switchery">
+            <div class="clearfix"></div> -->
         </div>
     </div>
 </div>

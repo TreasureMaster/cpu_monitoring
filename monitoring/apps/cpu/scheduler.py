@@ -15,9 +15,9 @@ def start():
     # Первая "пустая" информация, создает точку отсчета
     psutil.cpu_percent()
 
-    if settings.DEBUG:
-        logging.basicConfig()
-        logging.getLogger('apscheduler').setLevel(logging.DEBUG)
+    # if settings.DEBUG:
+    #     logging.basicConfig()
+    #     logging.getLogger('apscheduler').setLevel(logging.DEBUG)
 
     register_events(scheduler)
     scheduler.add_job(
