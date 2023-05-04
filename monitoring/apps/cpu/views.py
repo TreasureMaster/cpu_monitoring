@@ -8,11 +8,6 @@ from django.views import View
 from .models import CpuLoad
 
 
-# def dashboard(request):
-#     """Страница мониторинга"""
-#     return render(request, 'cpu/dashboard.html')
-
-
 class CpuLoadView(ListView):
     """Страница мониторинга"""
     model = CpuLoad
@@ -34,7 +29,9 @@ class CpuLoadView(ListView):
 
 class BaseListResource(View):
     def get(self, request):
-        qs = list(CpuLoad.objects.with_last_hour_loads().order_by('created_at').values())
+        qs = list(
+            CpuLoad.objects.with_last_hour_loads().order_by('created_at').values()
+        )
         ends_at = timezone.now()
         starts_at = ends_at - timezone.timedelta(hours=1)
 
