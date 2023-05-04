@@ -2,7 +2,7 @@
 
 ### Порядок установки и запуска
 
-1. Клонировать с https://github.com/TreasureMaster/cpu_monitoring.git
+1. Клонировать с https://github.com/TreasureMaster/cpu_monitoring
 2. Установить venv
 3. Установить требуемые библиотеки `pip install -r requirements.txt`
 4. Создать БД и пользователя в PostgreSQL.
