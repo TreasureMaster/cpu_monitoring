@@ -124,17 +124,17 @@ $(document).ready(function() {
   // });
 
   // Получение ссылки на элемент canvas в DOM
-  const $grafica = document.querySelector("#grafica");
-  // Tags - это метки, которые идут по оси X.
-  const tags = ["Январь", "Февраль", "Март", "Апрель"]
-  // У нас может быть несколько наборов данных. Давайте начнем с одного
-  const dataSales2020 = {
-      label: "Продажи за месяц",
-      data: [5000, 1500, 8000, 5102], // Данные представляют собой массив, который должен иметь такое же количество значений, как и количество тегов.
-      backgroundColor: 'rgba(54, 162, 235, 0.2)', // Цвет фона
-      borderColor: 'rgba(54, 162, 235, 1)', // Цвет границ
-      borderWidth: 1,// Толщина границ
-  };
+  // const $grafica = document.querySelector("#grafica");
+  // // Tags - это метки, которые идут по оси X.
+  // const tags = ["Январь", "Февраль", "Март", "Апрель"]
+  // // У нас может быть несколько наборов данных. Давайте начнем с одного
+  // const dataSales2020 = {
+  //     label: "Продажи за месяц",
+  //     data: [5000, 1500, 8000, 5102], // Данные представляют собой массив, который должен иметь такое же количество значений, как и количество тегов.
+  //     backgroundColor: 'rgba(54, 162, 235, 0.2)', // Цвет фона
+  //     borderColor: 'rgba(54, 162, 235, 1)', // Цвет границ
+  //     borderWidth: 1,// Толщина границ
+  // };
   // var riceData = {
   //   labels : ["Январь", "Февраль", "Март", "Апрель"],
   //   datasets : [
@@ -148,41 +148,45 @@ $(document).ready(function() {
   //   ]
   // };
   // new Chart($grafica).Line(riceData);
-  new Chart($grafica, {
-      type: 'line',// Тип графики
-      data: {
-          labels: tags,
-          datasets: [
-              dataSales2020,
-              // Больше данных здесь....
-          ]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true
-                  }
-              }],
-          },
-      }
-  });
+  // new Chart($grafica, {
+  //     type: 'line',// Тип графики
+  //     data: {
+  //         labels: tags,
+  //         datasets: [
+  //             dataSales2020,
+  //             // Больше данных здесь....
+  //         ]
+  //     },
+  //     options: {
+  //         scales: {
+  //             yAxes: [{
+  //                 ticks: {
+  //                     beginAtZero: true
+  //                 }
+  //             }],
+  //         },
+  //     }
+  // });
 
-  function requestData() {
-    $.ajax({
-        url: '/cpu/materials/',
-        type: "GET",
-        dataType: "json",
-        // data : {username : "demo"},
-        success: function(data) {
-            console.log(data);
-            // chart.addSeries({
-            //   name: "mentions",
-            //   data: data.month_mentions_graphic
-            // });
-        },
-        cache: false
-    });
-  }
-  requestData();
+  // function requestData() {
+  //   $.ajax({
+  //       url: '/cpu/materials/',
+  //       type: "GET",
+  //       dataType: "json",
+  //       // data : {username : "demo"},
+  //       success: function(data) {
+  //           console.log(data);
+  //           // chart.addSeries({
+  //           //   name: "mentions",
+  //           //   data: data.month_mentions_graphic
+  //           // });
+  //       },
+  //       cache: false
+  //   });
+  // }
+  // requestData();
+  // console.log('start testing');
+  // var bardata = JSON.parse("{{ barchart|safe }}");
+  // console.log(bardata);
+  // new Chart(document.getElementById("barchart"), bardata);
 });
